@@ -11,5 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
-Route::controller('home', 'HomeController');
+Route::get('/', 'UserController@home');
+
+Route::controller('user', 'UserController');
+Route::controller('aluno','AlunoController');
+Route::controller('coordenador','CoordenadorController');
+Route::controller('professor', 'ProfessorController');

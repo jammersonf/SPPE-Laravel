@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CEspecificas extends Migration {
+class CreateCEspecificasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -20,7 +20,7 @@ class CEspecificas extends Migration {
             $table->text('ser');
             $table->text('estrategiasEnsino');
             $table->integer('numAulas');
-            $table->string('semanaDatas', 50);
+            $table->string('semanaDatas');
             $table->integer('conteudos_id')->unsigned();
             $table->foreign('conteudos_id')->references('id')->on('conteudos');
         });

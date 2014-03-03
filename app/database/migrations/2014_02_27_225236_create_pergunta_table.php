@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Conteudos extends Migration {
+class CreatePerguntaTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,14 @@ class Conteudos extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('conteudos', function($table) {
+		Schema::create('pergunta', function($table) {
             $table->increments('id');
             $table->text('titulo');
-            $table->integer('numero');
-            $table->integer('planosEnsino_id')->unsigned();
+            $table->integer('status');
+            $table->integer('avaliacao_id')->unsigned();
+            $table->datetime('dataPergunta');
 
-            $table->foreign('planosEnsino_id')->references('id')->on('planosEnsino');
+            $table->foreign('avaliacao_id')->references('id')->on('avaliacao');
         });
 	}
 
@@ -29,7 +30,7 @@ class Conteudos extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('conteudos');
+		Schema::drop('pergunta');
 	}
 
 }

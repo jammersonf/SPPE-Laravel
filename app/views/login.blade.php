@@ -35,7 +35,7 @@
 		@endif
 		<div style="margin:1em">
 
-			{{ Form::open(array('url'=>'home/signin','class'=>'signin ui form')) }}
+			{{ Form::open(array('url'=>'user/signin','class'=>'signin ui form')) }}
 
 				<div class="ui icon input campo">
 					{{ Form::text('login',null,array('placeholder'=>'Login')) }}

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Avaliacao extends Migration {
+class CreateTurmaTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +12,17 @@ class Avaliacao extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('avaliacao', function($table) {
+		Schema::create('turma', function($table) {
             $table->increments('id');
-            $table->string('conceito', 45);
-            $table->text('comentario');
-            $table->integer('turma_id')->unsigned();
+            $table->integer('curso_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->datetime('dataAvaliacao');
+            $table->string('periodo');
+            $table->integer('base_id')->unsigned();
+            $table->string('turno');
 
-            $table->foreign('turma_id')->references('id')->on('turma');
+            $table->foreign('curso_id')->references('id')->on('curso');
             $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('base_id')->references('id')->on('base');
         });
 	}
 
@@ -32,7 +33,7 @@ class Avaliacao extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('avaliacao');
+		Schema::drop('turma');
 	}
 
 }

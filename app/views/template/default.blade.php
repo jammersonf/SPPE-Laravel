@@ -17,7 +17,7 @@
 				<img class="circular ui image" src="http://semantic-ui.com/images/demo/photo2.jpg">
 
 				{{-- exibe apenas o primeiro nome do usuário --}}
-				<span class="nome">{{ $sessao->nome; }}</span>
+				<span class="nome">{{ $sessao; }}</span>
 				<span class="tipo">{{ ucfirst(Request::segment(1)); }}</span>
 			</div>
 			<ul class="vertical">

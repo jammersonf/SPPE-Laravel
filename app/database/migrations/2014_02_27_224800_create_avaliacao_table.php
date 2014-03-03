@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Curso extends Migration {
+class CreateAvaliacaoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,15 @@ class Curso extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('curso', function($table) {
+		Schema::create('avaliacao', function($table) {
             $table->increments('id');
-            $table->string('nomeCurso', 50);
-            $table->string('eixo', 100);
+            $table->string('conceito');
+            $table->text('comentario');
+            $table->integer('turma_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->datetime('dataAvaliacao');
+
+            $table->foreign('turma_id')->references('id')->on('turma');
             $table->foreign('user_id')->references('id')->on('user');
         });
 	}
@@ -28,7 +32,7 @@ class Curso extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('curso');
+		Schema::drop('avaliacao');
 	}
 
 }

@@ -14,33 +14,64 @@ class UserController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-
 	public function home()
 	{
 		return View::make('login');
 	}
 
+	public function getLogout()
+	{
+		Auth::logout();
+		return Redirect::to('/');
+	}
+
 	public function postSignin()
 	{
+		//verifica se os campos estão devidamente preenchidos
+		$regras		= array(
+			"login"=>"required",
+			"senha"=>"required"
+		);
 
-		//tenta logar o usuario
-		$userdata = array(
-			'emaill'=>Input::get('username'),
-			'password'=>Input::get('password')
+		$validacao = Validator::make(Input::all(), $regras);
+
+		if($validacao->fails()) {
+			return Redirect::to('/')->withErrors($validacao);
+		}
+
+		//tenta logar o usuario		
+		$userdata	= array(
+			'username'=>Input::get('login'),
+			'password'=>Input::get('senha')
 		);
 
 
 		if (Auth::attempt($userdata) ) {
-			$login = Auth::user()->login;
-			$perfil = Auth::user()->perfil;
-			
+		
+		//cria sessão do usuário e direciona para o perfil correspondente
+		Session::put('nome', Auth::user()->nome);
+		Session::put('user', Auth::user()->username);
+
+		$perfil = Auth::user()->perfil;
+
+		if($perfil == 'aluno'){
 			return Redirect::to('aluno');
 
+		}else if($perfil == 'coordenador'){
+			return Redirect::to('coordenador');
+
+		}else if($perfil == 'professor'){
+			return Redirect::to('professor');
+
+		}
+		return Redirect::to('aluno');
+	
+
 		} else {
-		   return Redirect::to('erro')
-		      ->with('message', 'Your username/password combination was incorrect')
-		      ->withInput();
+		   return Redirect::to('/')
+		      ->withErrors('Your username/password combination was incorrect');
 		}
 	}
+
 
 }

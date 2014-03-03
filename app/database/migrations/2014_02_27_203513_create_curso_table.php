@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Resposta extends Migration {
+class CreateCursoTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,11 @@ class Resposta extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('resposta', function($table) {
+		Schema::create('curso', function($table) {
             $table->increments('id');
-            $table->text('titulo');
-            $table->timestamp('timestamp');
-            $table->integer('pergunta_id')->unsigned();
+            $table->string('nomeCurso');
+            $table->string('eixo');
             $table->integer('user_id')->unsigned();
-
-            $table->foreign('pergunta_id')->references('id')->on('pergunta');
             $table->foreign('user_id')->references('id')->on('user');
         });
 	}
@@ -31,7 +28,7 @@ class Resposta extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('resposta');
+		Schema::drop('curso');
 	}
 
 }
