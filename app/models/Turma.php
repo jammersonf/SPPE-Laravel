@@ -8,29 +8,31 @@
 
 class Turma extends Eloquent {
 
-    protected $table        = 'turma';
+    protected $table = 'turma';
+    public $timestamps = false;
+    protected $fillable = array('*');
 
     public function curso() {
-    	return $this->hasMany('Curso');
+    	return $this->belongsTo('Curso');
     }
 
-    public function user() {
-    	return $this->hasMany('User');
+    public function coordenador() {
+    	return $this->belongsTo('User');
     }
 
     public function base() {
-    	return $this->hasMany('Base');
+    	return $this->belongsTo('Base');
     }
 
     public function planosAula() {
-    	return $this->belongsTo('PlanosAula');
+    	return $this->hasMany('PlanosAula');
     }
 
     public function planosEnsino() {
-    	return $this->belongsTo('PlanosEnsino');
+    	return $this->hasMany('PlanosEnsino');
     }
 
     public function avaliacao() {
-    	return $this->belongsTo('Avaliacao');
+    	return $this->hasMany('Avaliacao');
     }
 }

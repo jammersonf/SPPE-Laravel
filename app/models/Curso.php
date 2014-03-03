@@ -8,13 +8,16 @@
 
 class Curso extends Eloquent {
 
-    protected $table        = 'curso';
+    protected $table = 'curso';
+    public $timestamps = false;
+	protected $fillable = array('*');
 
-    public function user() {
-    	return $this->hasMany('User');
+
+    public function coordenador() {
+    	return $this->belongsTo('User');
     }
 
-    public function base() {
-    	return $this->belongsTo('Base');
+    public function bases() {
+    	return $this->hasMany('Base');
     }
 }

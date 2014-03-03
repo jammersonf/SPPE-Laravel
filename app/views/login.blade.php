@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
-	<title>SOAD</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('/css/semantic.min.css') }} " />
-	<link rel="stylesheet" type="text/css" href="{{ asset('/css/estilo.css')}} " />
+	<title>ETER</title>
+	{{ HTML::style('/assets/components/semantic-ui/build/packaged/css/semantic.min.css') }}
+	{{ HTML::style('/assets/styles/main.css')}}
 	<style>
 		@import url(http://fonts.googleapis.com/css?family=Dosis:400,600);
 		.campo, .field {
@@ -38,10 +38,10 @@
 			{{ Form::open(array('url'=>'user/signin','class'=>'signin ui form')) }}
 
 				<div class="ui icon input campo">
-					{{ Form::text('login',null,array('placeholder'=>'Login')) }}
+					{{ Form::email('email',null,array('placeholder'=>'email')) }}
 					<i class="user basic icon large"></i>
 				</div>
-				
+
 				<div class="ui icon input campo">
 					{{ Form::password('senha') }}
 					<i class="lock icon large"></i>
@@ -51,8 +51,9 @@
 			{{ Form::close() }}
 
 		</div>
-		
 
 	</div>
+
+
 </body>
 </html>

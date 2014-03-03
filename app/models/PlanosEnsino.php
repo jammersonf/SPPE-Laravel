@@ -8,13 +8,15 @@
 
 class PlanosEnsino extends Eloquent {
 
-    protected $table        = 'planosEnsino';
+    protected $table = 'planos_ensino';
+    public $timestamps = false;
+	protected $fillable = array('*');
 
     public function turma() {
-    	return $this->hasMany('Turma');
+    	return $this->belongsTo('Turma');
     }
 
     public function conteudos() {
-    	return $this->belongsTo('Conteudos');
+    	return $this->hasMany('Conteudos');
     }
 }

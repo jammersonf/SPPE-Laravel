@@ -1,0 +1,33 @@
+{
+  "name": "stalker-app",
+  "version": "0.0.1",
+  "authors": [
+    "Lucio Rubens <luciorubeens@gmail.com>"
+  ],
+  "description": "Monitore seu namorado nas redes sociais",
+  "main": "public/assets/scripts/main.js",
+  "keywords": [
+    "stalker",
+    "detetive",
+    "monitorador",
+    "facebook",
+    "instagram"
+  ],
+  "license": "MIT",
+  "homepage": "http://lorenzodev.io/stalker-app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10.2",
+    "modernizr": "~2.7.1",
+    "respond": "~1.4.2",
+    "html5shiv": "~3.7.0",
+    "semantic-ui": "~0.13.1"
+  }
+}

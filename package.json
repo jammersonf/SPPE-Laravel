@@ -1,0 +1,30 @@
+{
+  "name": "stalker-app",
+  "version": "0.0.1",
+  "description": "Monitore seu namorado nas redes sociais",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/luciorubeens/stalker-app.git"
+  },
+  "keywords": [
+    "Stalker",
+    "Monitorar",
+    "Facebook",
+    "Instagram",
+    "Detetive"
+  ],
+  "author": "Lucio Rubens",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-uglify": "~0.3.3",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-phpunit": "~0.3.3"
+  }
+}

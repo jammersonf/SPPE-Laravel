@@ -1,0 +1,353 @@
+* {
+    font-family: 'Open Sans', 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #FAFCED;
+    height: 100%;
+}
+
+body.login {
+    background: url("../images/bg.jpg");
+}
+
+/*==============================
+=            HEADER            =
+==============================*/
+
+#menu-topo {
+    background: #183f40;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    height: 60px;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.4);
+    -moz-box-shadow:    0px 2px 2px 0px rgba(50, 50, 50, 0.4);
+    box-shadow:         0px 2px 2px 0px rgba(50, 50, 50, 0.4);
+}
+
+#menu-topo .item {
+    line-height: 60px!important;
+    padding: 0;
+    text-align: center;
+    min-width: 80px;
+}
+
+#menu-topo .title {
+    font-size: 21pt;
+    font-weight: 300;
+    padding:0 1em;
+}
+
+/*=============================
+=            CORPO            =
+=============================*/
+
+/*====================================
+=            MENU LATERAL            =
+====================================*/
+
+#menu-lateral {
+    height:100%;
+    width:16%;
+    position:fixed;
+    background: #518C7C;
+    margin:0;
+    padding: 0;
+}
+
+#menu-lateral > .profile {
+    display: block;
+    margin:1em 0;
+    text-align: center;
+}
+
+#menu-lateral > .profile > img {
+    margin:1em auto;
+}
+
+#menu-lateral > .profile > span {
+    display: block;
+}
+
+#menu-lateral > .profile > .nome {
+    font-size: 16pt;
+    color:white;
+}
+
+#menu-lateral > .profile > .tipo {
+    color: #222
+}
+
+#menu-lateral ul {
+    list-style: none;
+    display: block;
+    width: 100%;
+}
+
+#menu-lateral ul li {
+    display: block;
+    height: 60px;
+}
+
+#menu-lateral > ul > li > a {
+    display: block;
+    text-decoration: none;
+    font-size: 14pt!important;
+    text-transform: uppercase;
+    color: #1B4036;
+    line-height: 60px;
+    padding: 0 1em;
+    border-left: 3px solid #266251;
+}
+
+#menu-lateral ul li a i {
+    font-size: 18pt;
+    position: relative;
+    top:0.1em;
+    margin-right: 0.7em;
+
+}
+
+a.ativo, #menu-lateral > ul > li > a:hover {
+    background: #417063;
+    border-left:3px solid #011C26!important;
+}
+a.ativo, #menu-lateral > ul > li > a:hover{
+    color:white!important;
+}
+a.ativo > i, #menu-lateral > ul > li > a:hover > i {
+    color: #011C26;
+}
+
+/*=============================================
+=            CONTEUDO DA APLICAÇÃO            =
+=============================================*/
+
+#principal {
+    position: relative;
+    width: 84%;
+    padding: 0;
+    right: 0;
+    margin: 0;
+    margin-left: 16%;
+    height: 100%;
+}
+
+#principal > .content {
+    margin:1em 1.5em;
+}
+
+#agregador {
+    box-shadow: none;
+
+}
+
+#agregador > .row {
+    box-shadow: none;
+}
+
+/*==============================
+=            PAINEL            =
+==============================*/
+
+.box {
+    box-shadow: none!important;
+}
+
+.box-btn {
+    cursor: pointer;
+}
+
+.box-content {
+    text-align: center;
+    margin:1.5em 0 1em 0;
+    color:#222;
+}
+
+.box-content .numero {
+    font-weight: 500;
+    font-size: 40pt;
+}
+
+.box-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #128B73;
+    font-size: 11pt;
+}
+
+.box-header {
+    font-size: 18pt;
+    font-weight: 300;
+}
+
+.box-0 {
+    min-height: 160px;
+}
+.box-1 {
+    min-height: 72px;
+}
+
+.painel-login {
+    margin: 10em auto;
+    min-height: 200px;
+    width: 25em;
+    padding: 0;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 5px 0px;
+    color: rgb(34, 34, 34);
+}
+
+.segment.content {
+    display: none;
+}
+
+/*===================================
+=            ESPECIFICOS            =
+===================================*/
+
+.button {
+    color:#555!important;
+}
+#btn-avaliar {
+    margin-top: 1em
+}
+
+.btn {
+    background-color: #aaa;
+    -webkit-box-shadow: inset 0 0 5em rgba(0,0,0,0.15),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -moz-box-shadow: inset 0 0 5em rgba(0,0,0,0.15),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -ms-box-shadow: inset 0 0 5em rgba(0,0,0,0.15),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -o-box-shadow: inset 0 0 5em rgba(0,0,0,0.15),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    box-shadow: inset 0 0 5em rgba(0,0,0,0.15),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 .1em 0 rgba(255,255,255,0.1),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -moz-box-shadow: inset 0 .1em 0 rgba(255,255,255,0.1),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -ms-box-shadow: inset 0 .1em 0 rgba(255,255,255,0.1),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -o-box-shadow: inset 0 .1em 0 rgba(255,255,255,0.1),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    box-shadow: inset 0 .1em 0 rgba(255,255,255,0.1),inset 0 -.15em 0 rgba(0,0,0,0.2),0 .15em 0 rgba(0,0,0,0.075);
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.1em;
+    padding: 0.4em 1em;
+    text-decoration: none;
+    color:white;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn.fluid {
+    display: block;
+}
+
+.btn.large {
+    font-size: 1.4em;
+}
+
+.btn.silver {
+    color:#444;
+    background-color: #eee;
+}
+.btn.turquoise {
+    background-color: rgb(22, 160, 133);
+}
+
+.btn.emerald {
+    background-color: rgb(39, 174, 96)
+}
+
+.btn.blue {
+    background-color: rgb(41, 128, 185)
+}
+
+.btn.night {
+    background-color: rgb(44, 62, 80);
+}
+
+.center {
+    text-align: center;
+}
+/*===================================
+=            Coordenador            =
+===================================*/
+
+.formulario-abrir-avaliacao > .content {
+    transition: height 0.8s ease;
+}
+
+.field > label {
+    font-weight: 600;
+    margin-bottom: 0.5em!important;
+}
+
+#avaliacoes-criadas .item {
+    min-height: 150px!important;
+    text-align: left;
+    -webkit-transition: padding .2s ease;
+    transition: padding .4s ease;
+}
+
+#avaliacoes-criadas .description {
+    margin-top: 2em;
+    color:#666;
+}
+#avaliacoes-criadas .item:hover {
+    border-bottom-color: #aaa!important;
+    padding-bottom: 60px;
+}
+
+#avaliacoes-criadas .item:hover .attached {
+    display: block;
+}
+
+#avaliacoes-criadas .attached {
+    display: none;
+}
+
+#avaliacoes-criadas .attached a {
+    text-decoration: none;
+    color:#222;
+}
+
+#form-editar-avaliacao {
+    width:100%;
+    font-size: 13pt;
+}
+
+.lista-drag {
+    text-align: left;
+
+}
+.lista-drag > .item {
+    cursor: move!important;
+    padding:0.5em 0.7em!important;
+    border-left: 4px solid orange;
+}
+.lista-drag .item > .content {
+    color:#555;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.drop-box {
+    border:2px dashed #eee;
+    padding:1em;
+}
+
+.drop-box .title {
+    margin:0 auto;
+    font-size:14pt;
+    font-weight: 300;
+    color:#ccc;
+}

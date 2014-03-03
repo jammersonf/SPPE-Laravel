@@ -8,13 +8,15 @@
 
 class Conteudos extends Eloquent {
 
-    protected $table        = 'conteudos';
+    protected $table = 'conteudos';
+    public $timestamps = false;
+	protected $fillable = array('*');
 
     public function planosEnsino() {
-    	return $this->hasMany('PlanosEnsino');
+    	return $this->belongsTo('PlanosEnsino');
     }
 
-    public function cEspecificas() {
-    	return $this->belongsTo('CEspecificas');
+    public function competenciasEspecificas() {
+    	return $this->hasMany('CompetenciasEspecificas');
     }
 }

@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	public $timestamps = false;
-	protected $table = 'user';
+	protected $table = 'users';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -47,24 +47,6 @@ class User extends Eloquent implements UserInterface {
 	public function getReminderEmail()
 	{
 		return $this->email;
-	}
-
-	//relacionamentos de tabelas
-
-	public function curso() {
-		return $this->belongsTo('Curso');
-	}
-
-	public function turma() {
-		return $this->belongsTo('Turma');
-	}
-
-	public function avaliacao() {
-		return $this->belongsTo('Avaliacao');
-	}
-
-	public function resposta() {
-		return $this->belongsTo('Resposta');
 	}
 
 }

@@ -8,13 +8,15 @@
 
 Class Base extends Eloquent {
 
-    protected $table        = 'base';
+    protected $table = 'base';
+    public $timestamps = false;
+	protected $fillable = array('*');
 
     public function curso() {
-    	return $this->hasMany('Curso');
+    	return $this->belongsTo('Curso');
     }
 
-    public function turma() {
-    	return $this->belongsTo('Turma');
+    public function turmas() {
+    	return $this->hasMany('Turma');
     }
 }

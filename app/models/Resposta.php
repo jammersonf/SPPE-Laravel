@@ -8,13 +8,22 @@
 
 class Resposta extends Eloquent {
 
-    protected $table        = 'resposta';
+    protected $table = 'resposta';
+    public $timestamps = false;
+	protected $fillable = array('*');
 
     public function pergunta() {
-    	return $this->hasMany('Pergunta');
+    	return $this->belongsTo('Pergunta');
     }
 
-    public function user() {
-    	return $this->hasOne('User');
+    // aluno
+    public function aluno() {
+    	return $this->belongsTo('User');
     }
+
+    // professor
+    public function professor() {
+    	return $this->belongsTo('User');
+    }
+
 }
