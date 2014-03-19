@@ -1,9 +1,9 @@
 @extends('template.default')
 
 @section('menu')
-	@include('coordenador.menu')
+	@include('professor.menu')
 @stop
 
 @section('content')
-	...
+Professor
 @stop

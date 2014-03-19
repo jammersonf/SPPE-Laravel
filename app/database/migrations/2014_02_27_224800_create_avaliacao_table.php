@@ -18,10 +18,10 @@ class CreateAvaliacaoTable extends Migration {
             $table->text('comentario');
             $table->integer('turma_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->datetime('dataAvaliacao');
+            $table->datetime('data_avaliacao');
 
-            $table->foreign('turma_id')->references('id')->on('turma');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('turma_id')->references('id')->on('turma')->onDelete('CASCADE')->onUpdate('NO ACTION');
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('CASCADE')->onUpdate('NO ACTION');
         });
 	}
 

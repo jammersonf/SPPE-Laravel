@@ -11,9 +11,22 @@
 |
 */
 
-Route::get('/', 'UserController@home');
 
+Route::get('/', 'UserController@home');
 Route::controller('user', 'UserController');
-Route::controller('aluno','AlunoController');
-Route::controller('coordenador','CoordenadorController');
-Route::controller('professor', 'ProfessorController');
+//sub-diretórios dos controllers
+    //coord
+    Route::controller('coordenador', 'coord\CoordenadorController');
+    Route::controller('cadastro', 'coord\CadastroController');
+    //prof
+    Route::controller('professor', 'prof\ProfessorController');
+    Route::controller('ensino', 'prof\EnsinoController');
+    //Route::controller('aula', 'prof\AulaController');
+    //aluno
+    Route::controller('aluno', 'aluno\AlunoController');
+
+
+Route::get('buscabase/{id}', function($id)
+{
+    return \Curso::find($id)->base;
+});

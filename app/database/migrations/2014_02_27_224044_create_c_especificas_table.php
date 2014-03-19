@@ -12,17 +12,17 @@ class CreateCEspecificasTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('cEspecificas', function($table) {
+        Schema::create('c_especificas', function($table) {
             $table->increments('id');
             $table->text('conhecimento');
             $table->text('fazer');
             $table->text('agir');
             $table->text('ser');
-            $table->text('estrategiasEnsino');
-            $table->integer('numAulas');
-            $table->string('semanaDatas');
+            $table->text('estrategias_ensino');
+            $table->integer('num_aulas');
+            $table->string('semana_datas');
             $table->integer('conteudos_id')->unsigned();
-            $table->foreign('conteudos_id')->references('id')->on('conteudos');
+            $table->foreign('conteudos_id')->references('id')->on('conteudos')->onDelete('CASCADE')->onUpdate('NO ACTION');
         });
 	}
 

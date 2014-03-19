@@ -9,16 +9,21 @@
 class Avaliacao extends Eloquent {
 
     protected $table = 'avaliacao';
+    public $timestamps = false;
+    protected $fillable = array('conceito', 'comentario', 'turma_id', 'user_id', 'data_avaliacao');
 
-    public function turma() {
-    	return $this->hasMany('Turma');
+    public function turma()
+    {
+    	return $this->belongsTo('Turma');
     }
 
-    public function user() {
-    	return $this->hasMany('User');
+    public function user()
+    {
+    	return $this->belongsTo('User');
     }
 
-    public function pergunta() {
-    	return $this->belongsTo('Pergunta');
+    public function pergunta()
+    {
+    	return $this->hasMany('Pergunta');
     }
 }

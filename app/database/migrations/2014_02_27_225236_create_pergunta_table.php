@@ -17,9 +17,9 @@ class CreatePerguntaTable extends Migration {
             $table->text('titulo');
             $table->integer('status');
             $table->integer('avaliacao_id')->unsigned();
-            $table->datetime('dataPergunta');
+            $table->timestamps();
 
-            $table->foreign('avaliacao_id')->references('id')->on('avaliacao');
+            $table->foreign('avaliacao_id')->references('id')->on('avaliacao')->onDelete('CASCADE')->onUpdate('NO ACTION');
         });
 	}
 

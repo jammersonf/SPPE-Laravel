@@ -16,9 +16,9 @@ class CreateConteudosTable extends Migration {
             $table->increments('id');
             $table->text('titulo');
             $table->integer('numero');
-            $table->integer('planosEnsino_id')->unsigned();
+            $table->integer('planos_ensino_id')->unsigned();
 
-            $table->foreign('planosEnsino_id')->references('id')->on('planosEnsino');
+            $table->foreign('planos_ensino_id')->references('id')->on('planos_ensino')->onDelete('CASCADE')->onUpdate('NO ACTION');
         });
 	}
 

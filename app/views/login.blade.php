@@ -31,7 +31,7 @@
 			@foreach($errors->all() as $e)
 				<li>{{ $e}}</li>
 			@endforeach
-		</u>
+		</ul>
 		@endif
 		<div style="margin:1em">
 

@@ -39,7 +39,7 @@ class UserController extends BaseController {
 			return Redirect::to('/')->withErrors($validacao);
 		}
 
-		//tenta logar o usuario		
+		//tenta logar o usuario
 		$userdata	= array(
 			'username'=>Input::get('login'),
 			'password'=>Input::get('senha')
@@ -49,6 +49,7 @@ class UserController extends BaseController {
 		if (Auth::attempt($userdata) ) {
 		
 		//cria sessão do usuário e direciona para o perfil correspondente
+		Session::put('id', Auth::user()->id);
 		Session::put('nome', Auth::user()->nome);
 		Session::put('user', Auth::user()->username);
 
@@ -64,8 +65,6 @@ class UserController extends BaseController {
 			return Redirect::to('professor');
 
 		}
-		return Redirect::to('aluno');
-	
 
 		} else {
 		   return Redirect::to('/')

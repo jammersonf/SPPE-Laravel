@@ -1,6 +1,6 @@
-<?php
+<?php namespace aluno;
 
-class AlunoController extends BaseController
+class AlunoController extends \BaseController
 {
 	private $id;
 

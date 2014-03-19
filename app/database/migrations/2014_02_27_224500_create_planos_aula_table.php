@@ -12,17 +12,17 @@ class CreatePlanosAulaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('planosAula', function($table) {
+		Schema::create('planos_aula', function($table) {
             $table->increments('id');
             $table->text('competencias');
             $table->text('conteudo');
             $table->text('metodologia');
             $table->text('recursos');
             $table->text('ambientacao');
-            $table->text('temaCentral');
-            $table->datetime('dataPlano');
+            $table->text('tema_central');
+            $table->datetime('data_plano');
             $table->integer('turma_id')->unsigned();
-            $table->foreign('turma_id')->references('id')->on('turma');
+            $table->foreign('turma_id')->references('id')->on('turma')->onDelete('CASCADE')->onUpdate('NO ACTION');
         });
 	}
 

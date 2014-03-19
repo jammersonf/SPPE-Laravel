@@ -9,7 +9,6 @@ class User extends Eloquent implements UserInterface {
 	 *
 	 * @var string
 	 */
-	public $timestamps = false;
 	protected $table = 'user';
 
 	/**
@@ -51,20 +50,24 @@ class User extends Eloquent implements UserInterface {
 
 	//relacionamentos de tabelas
 
-	public function curso() {
-		return $this->belongsTo('Curso');
+	public function curso()
+    {
+		return $this->hasMany('Curso');
 	}
 
-	public function turma() {
-		return $this->belongsTo('Turma');
+	public function turma()
+    {
+		return $this->hasMany('Turma');
 	}
 
-	public function avaliacao() {
-		return $this->belongsTo('Avaliacao');
+	public function avaliacao()
+    {
+		return $this->hasMany('Avaliacao');
 	}
 
-	public function resposta() {
-		return $this->belongsTo('Resposta');
+	public function resposta()
+    {
+		return $this->hasOne('Resposta');
 	}
 
 }

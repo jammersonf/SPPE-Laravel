@@ -8,9 +8,13 @@
 
 class CEspecificas extends Eloquent {
 
-    protected $table = 'cEspecificas';
+    protected $table    = 'c_especificas';
+    public $timestamps  = false;
+    protected $fillable = array('conhecimento', 'fazer', 'agir', 'ser', 'estrategias_ensino', 'num_aulas', 'semana_datas', 'conteudos_id');
 
-    public function conteudos() {
-    	return $this->hasMany('Conteudos');
+    public function conteudos()
+    {
+        return $this->belongsTo('Conteudos');
     }
+
 }

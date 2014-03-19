@@ -14,10 +14,10 @@ class CreateCursoTable extends Migration {
 	{
 		Schema::create('curso', function($table) {
             $table->increments('id');
-            $table->string('nomeCurso');
+            $table->string('nome_curso');
             $table->string('eixo');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('CASCADE')->onUpdate('NO ACTION');
         });
 	}
 

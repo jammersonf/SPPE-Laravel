@@ -12,7 +12,7 @@ class CreatePlanosEnsinoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('planosEnsino', function($table) {
+		Schema::create('planos_ensino', function($table) {
             $table->increments('id');
             $table->text('competencias');
             $table->text('recursos');
@@ -20,10 +20,10 @@ class CreatePlanosEnsinoTable extends Migration {
             $table->text('instrumentos');
             $table->text('acompanhamento');
             $table->text('referencias');
-            $table->datetime('dataPlano');
+            $table->datetime('data_plano');
             $table->integer('turma_id')->unsigned();
 
-            $table->foreign('turma_id')->references('id')->on('turma');
+            $table->foreign('turma_id')->references('id')->on('turma')->onDelete('CASCADE')->onUpdate('NO ACTION');
 
         });
 	}

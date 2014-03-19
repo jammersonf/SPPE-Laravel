@@ -8,9 +8,12 @@
 
 class PlanosAula extends Eloquent {
 
-    protected $table        = 'planosAula';
+    protected $table    = 'planos_aula';
+    public $timestamps  = false;
+    protected $fillable = array('competencias', 'conteudo', 'metodologia', 'recursos', 'ambientacao', 'tema_central', 'data_plano', 'turma_id');
 
-    public function turma() {
-    	return $this->hasMany('Turma');
+    public function turma()
+    {
+        return $this->belongsTo('Turma');
     }
 }

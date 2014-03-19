@@ -6,15 +6,20 @@
  * Time: 21:23
  */
 
-class Conteudos extends Eloquent {
+class Conteudos extends Eloquent
+{
 
-    protected $table        = 'conteudos';
+    protected $table    = 'conteudos';
+    public $timestamps  = false;
+    protected $fillable = array('titulo', 'numero', 'turma', 'planos_ensino_id');
 
-    public function planosEnsino() {
-    	return $this->hasMany('PlanosEnsino');
+    public function planos_ensino()
+    {
+    	return $this->belongsTo('Planos_ensino');
     }
 
-    public function cEspecificas() {
-    	return $this->belongsTo('CEspecificas');
+    public function c_especificas()
+    {
+    	return $this->hasMany('C_especificas');
     }
 }

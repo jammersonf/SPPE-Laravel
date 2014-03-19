@@ -14,12 +14,12 @@ class CreateBaseTable extends Migration {
 	{
 		Schema::create('base', function($table) {
             $table->increments('id');
-            $table->string('nomeBase');
+            $table->string('nome_base');
             $table->integer('modulo');
             $table->integer('duracao');
             $table->integer('semana');
             $table->integer('curso_id')->unsigned();
-            $table->foreign('curso_id')->references('id')->on('curso');
+            $table->foreign('curso_id')->references('id')->on('curso')->onDelete('CASCADE')->onUpdate('NO ACTION');
 
         });
 	}

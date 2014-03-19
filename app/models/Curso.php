@@ -6,15 +6,20 @@
  * Time: 21:27
  */
 
-class Curso extends Eloquent {
+class Curso extends Eloquent
+{
 
-    protected $table        = 'curso';
+    protected $table   = 'curso';
+    public $timestamps = false;
+    protected $fillable= array('nome_curso', 'eixo', 'user_id');
 
-    public function user() {
-    	return $this->hasMany('User');
+    public function user()
+    {
+    	return $this->belongsTo('User');
     }
 
-    public function base() {
-    	return $this->belongsTo('Base');
+    public function base()
+    {
+    	return $this->hasMany('Base');
     }
 }

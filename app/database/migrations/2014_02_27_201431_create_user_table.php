@@ -20,7 +20,6 @@ class CreateUserTable extends Migration {
             $table->string('username');
             $table->string('password');
             $table->string('perfil');
-            $table->datetime('dataCadastro');
             $table->timestamps();
         });
 	}

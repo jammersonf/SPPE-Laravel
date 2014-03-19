@@ -20,9 +20,9 @@ class CreateTurmaTable extends Migration {
             $table->integer('base_id')->unsigned();
             $table->string('turno');
 
-            $table->foreign('curso_id')->references('id')->on('curso');
-            $table->foreign('user_id')->references('id')->on('user');
-            $table->foreign('base_id')->references('id')->on('base');
+            $table->foreign('curso_id')->references('id')->on('curso')->onDelete('CASCADE')->onUpdate('NO ACTION');
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('CASCADE')->onUpdate('NO ACTION');
+            $table->foreign('base_id')->references('id')->on('base')->onDelete('CASCADE')->onUpdate('NO ACTION');
         });
 	}
 
